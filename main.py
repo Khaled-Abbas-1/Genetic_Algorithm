@@ -67,11 +67,6 @@ print("Best Fitness: ", best_ind.fitness.values)
 best_schedule = {intake: module for intake, module in zip(intakes, best_ind)}
 print("Best Schedule: ", best_schedule)
 
-# Exporting the best schedule to an Excel file
-best_schedule_df = pd.DataFrame(list(best_schedule.items()), columns=['Intake', 'Module'])
-best_schedule_df.to_excel('best_schedule.xlsx', index=False)
-print("Best schedule exported to 'best_schedule.xlsx'")
-
 # Extracting the best fitness values from the logbook
 gen = logbook.select("gen")
 best_fits = logbook.select("min")  # Assuming we are minimizing the fitness, hence 'min'
