@@ -31,7 +31,7 @@ def evaluate(individual):
     intake_schedule = dict(zip(modules, individual))
     # Constraint: Maximum number of modules per intake
     over_limit = sum(max(0, len(mods) - max_modules_per_intake * (penalty_per_extra_module + research_methodology_penalty)) for mods in intake_schedule.values())
-    return over_limit,  
+    return over_limit,
 
 # Genetic operators
 toolbox.register("evaluate", evaluate)
